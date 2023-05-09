@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    
+        
+        <div class="col-4 left">
+
+            <div class="picture">
+                <img [src]="imageUrl" alt="">
+                <h2>image</h2>
+                
+            </div><!--picturre-->
+            <div class="description">
+              <div class="left-title">about me</div>
+              <h2>{{arr.Description}}</h2>      
+          </div><!--description-->
+
+          <div class="languages">
+            <div class="left-title">languages</div> {{arr.Languages}}
+         </div><!--languages-->
+
+         <div class="skills">
+          <div class="left-title">skills</div>  {{arr.Skills}}
+        </div><!--skills-->
+      </div>
+
+            
+           
+    <!--LET SIDE ENDED-->
+    
+    <div class="right col-6">
+      <div class="header row border">
+      <div class="main col-6">
+      <div class="name">
+        <h1>Hi, I'M <span class="Name">{{arr.Name}}</span> </h1>
+    </div><!--name-->
+    <div class="Title">
+      <h1> Title</h1>{{arr.Title}}
+    </div><!--title-->
+  </div><!--col-6 main-->
+    <div class="contact col-6">
+        
+      <span style="font-weight: bold;">Contact</span> {{arr.Contact}}
+
+   </div><!--contact-->
+  </div><!--header row-->
+   <div class="row">
+    <div class="experience">
+      <div class="right-title">Experiences</div> {{arr.Experiences}}
+    </div><!--experience-->
+    <div class="education">
+      <div class="right-title">Education</div> {{arr.Education}}
+  </div><!--education-->
+  <div class="certificates">
+    <div class="right-title">Certificates</div>  {{arr.Certificates}}
+  </div><!--certificates-->
+ </div><!--row-->
+    </div><!--right-->
+    
+    
+
+ 
+
+   
+
+    
+    
+
+    
+
+    
+
+    
+
+    <div class="interest">
+       <span>interest</span> {{arr.Interest}}
+       {{arr | json}}
+    </div><!--interest-->
+  </div><!--row-->
+</div><!--conainer-->

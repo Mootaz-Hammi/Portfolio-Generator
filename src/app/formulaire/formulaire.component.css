@@ -1,0 +1,26 @@
+.picture{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20%;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.formulaire{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contact{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* margin-left: 1rem; */
+}
+.header{
+    
+    border:solid;
+}
+/* .Education{
+    margin-left: 1rem;
+} */

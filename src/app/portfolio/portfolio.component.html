@@ -1,0 +1,64 @@
+<div class="container mw-100">
+    <div class="header">
+        <span class="portfolio">
+       <h1> PORTFOLIO </h1>
+        </span><!--portfolio-->
+        
+
+            <div  class="picture">
+                <img class="picture" [src]="url" alt="">
+            </div><!--picturre-->
+            <div class="name">
+                <h1>Hi, I'M <span class="Name">{{arr.Name}}</span> </h1>
+            </div><!--name-->
+            <div class="Title">
+              <h1> Title</h1>{{arr.Title}}
+            </div><!--title-->
+            <div class="description">
+                <h2>{{arr.Description}}</h2>  
+                <h2>{{arr | json}}</h2>    
+            </div><!--description-->
+    </div>
+    
+    
+    
+
+    <!-- <div class="about_me">
+
+    </div>about me -->
+
+    <div class="contact">
+        
+       <span style="font-weight: bold;">Phone</span> {{arr.Phone}}
+       <span style="font-weight: bold;">LinkedIn</span> {{arr.LinkedIn}}
+       <span style="font-weight: bold;">Github</span> {{arr.Github}}
+       <span style="font-weight: bold;">Adress</span> {{arr.Adress}}
+       <span style="font-weight: bold;">Email</span> {{arr.Mail}}
+
+    </div><!--contact-->
+
+    <div class="education">
+       <span>Educations</span> {{arr.Education}}
+    </div><!--education-->
+
+    <div class="skills">
+      <span>skills</span>  {{arr.Skills}}
+    </div><!--skills-->
+    
+
+    <div class="experience">
+      <span>experience</span> {{arr.Experiences}}
+    </div><!--experience-->
+
+    <div class="certificates">
+      <span>certificates</span>  {{arr.Certificates}}
+    </div><!--certificates-->
+
+    <div class="languages">
+       <span>languages</span> {{arr.Languages}}
+    </div><!--languages-->
+
+    <div class="interest">
+       <span>interest</span> {{arr.Interest}}
+    </div><!--interest-->
+</div><!--conainer-->

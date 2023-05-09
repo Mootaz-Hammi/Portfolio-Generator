@@ -1,0 +1,155 @@
+
+<div class="formulaire">
+    <div class="container mw-100">
+        <div class="row">
+<form [formGroup]="cvForm" class="formulaire" (ngSubmit)="save()">
+  <img class="picture" [src]="imageUrl" alt="">
+  <div class="col-3" >
+    <input  class="form-control" formControlName="Picture" type="file" (change)="onFileSelected($event)">
+  </div>
+  <div class="row">
+  <div class="header border border-danger col-6">
+    <h3>Person</h3>
+    <div>
+      <label>Full Name</label>
+      <input class="form-control" type="text" formControlName="Name" required>
+    </div><!--name-->
+
+    
+     
+    <div>
+      <label>Title</label>
+      <input class="form-control" type="text" formControlName="Title">
+      
+    </div><!--title-->
+
+    <div>
+      <label>Description</label>
+      <textarea class="form-control" name="Description" id="" cols="30" rows="10" formControlName="Description"></textarea>
+      
+    </div><!--Description-->
+  </div><!--header-->
+
+    <div class="col-6">
+      <div class="container mw-100">
+        <div class="contact row border">
+        <h3>Contact</h3>
+      <span>LinkedIn</span>
+      <input class="form-control" type="text" formControlName="LinkedIn">
+      
+      <span>Email</span>
+      <input class="form-control" type="email" formControlName="Email">
+    
+      <span>Phone</span>
+      <input class="form-control" type="number" formControlName="Phone">
+      
+      <span>Adress</span>
+      <input class="form-control" type="text" formControlName="Adress">
+      
+      <span>Github</span>
+      <input class="form-control" type="text" formControlName="GitHub">
+    </div><!--1st row-->
+    </div>
+  </div><!--Contact-->
+</div><!--container contact-->
+    
+      <div class="container mw-100">
+        <div class="row">
+          <div class="Education col-6 border">
+    <h3 for="Education">Education:</h3>
+    <div class="container mw-100 ">
+    <div formArrayName="Education">
+      
+        <ng-container *ngFor="let Education of cvForm.get('Education')['controls'];index as i">
+          <input class="form-control" type="text" formControlName="{{i}}">
+          <!-- <input [formControlName]="i"> -->
+        </ng-container>
+        <button class="btn btn-success"(click)="addEducation()">+</button>
+        </div>
+    </div>
+    </div>
+  
+  <div class="col-6 border">
+    <h3 for="Skills">Skills:</h3>
+      <div formArrayName="Skills">
+        
+          <ng-container *ngFor="let skill of cvForm.get('Skills')['controls'];index as i">
+            <input class="form-control" type="text" formControlName="{{i}}">
+            <!-- <input [formControlName]="i"> -->
+          </ng-container>
+          <button class="btn btn-success"(click)="addSkills()">+</button>
+          
+      </div><!--Skills-->
+    </div><!--education-->
+  </div><!--col-6-->
+    </div><!--row-->
+  
+
+    <div class="container mw-100">
+      <div class="row">
+        <div class="col-6 border">
+      <h3 for="Experiences">Experiences:</h3>
+      <div formArrayName="Experiences">
+        
+          <ng-container *ngFor="let Experiences of cvForm.get('Experiences')['controls'];index as i">
+            <input class="form-control" type="text" formControlName="{{i}}">
+            <!-- <input [formControlName]="i"> -->
+          </ng-container>
+          <button class="btn btn-success"(click)="addExperiences()">+</button>
+        </div><!--Experiences-->
+      </div><!--col-6-->
+      <div class="col-6 border">
+    <h3 for="Certificates">Certificates:</h3>
+    <div formArrayName="Certificates">
+      
+        <ng-container *ngFor="let Certificates of cvForm.get('Certificates')['controls'];let i=index">
+          <input class="form-control" type="text" formControlName="{{i}}">
+          <!-- <input [formControlName]="i"> -->
+        </ng-container>
+        <button class="btn btn-success"(click)="addCertificates()">+</button>
+        
+    </div><!--Certificates-->
+  </div><!--col-6-->
+  </div><!--row-->
+  </div><!--container-->
+    
+    <h3 for="Languages">Languages:</h3>
+    <div class="container mw-100"  formArrayName="Languages">
+      
+        <div *ngFor="let Language of cvForm.get('Languages')['controls'];let i=index" [formGroupName]="i">
+          <!-- <div formGroupName="i"> -->
+            <label><span> Languages :</span> <input class="form-control" type="text" formControlName="languageName">
+            </label>
+            <label> <span> Level :</span> <input class="form-control" type="text" formControlName="languageLevel">
+
+            </label>
+          <!-- <input [formControlName]="i"> -->
+          <!-- </div> -->
+        
+      </div><!--formgroup-->
+      <button class="btn btn-success"(click)="addLanguage()">+</button>
+    </div><!--Languages-->
+
+    <h3 for="Interest">Interest:</h3>
+    <div formArrayName="Interest">
+      
+        <ng-container *ngFor="let Interest of cvForm.get('Interest')['controls'];index as i">
+          <input class="form-control" type="text" formControlName="{{i}}">
+          <!-- <input [formControlName]="i"> -->
+        </ng-container>
+        <button class="btn btn-success"(click)="addInterest()">+</button>
+        
+    </div><!--Interest-->
+    
+    
+    <!-- Add more form controls for the other fields -->
+    
+    <div>
+      <button class="btn btn-success" type="submit" [disabled]="cvForm.invalid">Save</button>
+    </div>
+  </form>
+</div><!--row-->
+</div><!--container-->
+</div><!--formualaire-->
+
+
