@@ -10,9 +10,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormulaireComponent implements OnInit {
   cvForm: FormGroup;
+  formSkills:FormGroup
+  formCertificates:FormGroup
+  
 
   constructor(private fb: FormBuilder,private service:CvServiceService) {
     
+this.formSkills = this.fb.group({
+      skillsArray: this.fb.array([
+        this.fb.group({
+          skills: ['', Validators.required],
+          level: ['', Validators.required]
+        })
+      ])
+    });
+
+    this.formCertificates = this.fb.group({
+      certificatesArray: this.fb.array([
+        this.fb.group({
+          title: ['', Validators.required],
+          date: ['', Validators.required]
+        })
+      ])
+    });
     
   }
 
@@ -39,10 +59,10 @@ export class FormulaireComponent implements OnInit {
       // Skills: this.fb.array([
       //   this.createSkillsGroup()
       // ]),
-      Skills: new FormArray([
+      // Skills: new FormArray([
         
-        new FormControl(null)
-      ]),
+      //   new FormControl(null)
+      // ]),
       Experiences: new FormArray([
         new FormControl(null)
       ]),
@@ -52,7 +72,9 @@ export class FormulaireComponent implements OnInit {
       ]),
       Languages: new FormArray([
         
-        new FormArray([])
+        new FormArray([
+          
+        ])
       ]),
       Interest: new FormArray([
         
@@ -143,24 +165,24 @@ export class FormulaireComponent implements OnInit {
   
     
   }
-  addSkills(){
-(<FormArray>this.cvForm.get('Skills')).push(new FormControl(null,Validators.required))
-  }
-  addEducation(){
-(<FormArray>this.cvForm.get('Education')).push(new FormControl(null,Validators.required))
-  }
-  addExperiences(){
-    (<FormArray>this.cvForm.get('Experiences')).push(new FormControl(null,Validators.required))
-  }
-  addCertificates(){
-    (<FormArray>this.cvForm.get('Certificates')).push(new FormControl(null,Validators.required))
-  }
-  addLanguages(){
-    (<FormArray>this.cvForm.get('Languages')).push(new FormControl(null,Validators.required))
-  }
-  addInterest(){
-    (<FormArray>this.cvForm.get('Interest')).push(new FormControl(null,Validators.required))
-  }
+//   addSkills(){
+// (<FormArray>this.cvForm.get('Skills')).push(new FormControl(null,Validators.required))
+//   }
+//   addEducation(){
+// (<FormArray>this.cvForm.get('Education')).push(new FormControl(null,Validators.required))
+//   }
+//   addExperiences(){
+//     (<FormArray>this.cvForm.get('Experiences')).push(new FormControl(null,Validators.required))
+//   }
+//   addCertificates(){
+//     (<FormArray>this.cvForm.get('Certificates')).push(new FormControl(null,Validators.required))
+//   }
+//   addLanguages(){
+//     (<FormArray>this.cvForm.get('Languages')).push(new FormControl(null,Validators.required))
+//   }
+//   addInterest(){
+//     (<FormArray>this.cvForm.get('Interest')).push(new FormControl(null,Validators.required))
+//   }
   // uploadImage(formData: FormData) {
   //   this.http.post('http://localhost:8080/upload', formData)
   //     .subscribe(response => {
@@ -183,4 +205,53 @@ export class FormulaireComponent implements OnInit {
     // formData.append('image', file, file.name);
     // this.uploadImage(formData)
   }
+
+//skills begin
+  get skillsArray() {
+  return this.formSkills.get('skillsArray') as FormArray;
+}
+
+
+addSkill() {
+  this.skillsArray.push(this.fb.group({
+    skills: ['', Validators.required],
+    level: ['', Validators.required]
+  }));
+}
+
+removeSkill(index: number) {
+  this.skillsArray.removeAt(index);
+}
+
+onSubmit2() {
+  console.log(this.formSkills.value);
+  // any additional logic here to handle the form submission
+}
+//skills ended
+
+
+//skills begin
+get certificatesArray() {
+  return this.formCertificates.get('certificatesArray') as FormArray;
+}
+
+
+addcertificates() {
+  this.certificatesArray.push(this.fb.group({
+    certificates: ['', Validators.required],
+    date: ['', Validators.required]
+  }));
+}
+
+removecertificates(index: number) {
+  this.skillsArray.removeAt(index);
+}
+
+onSubmit3() {
+  // console.log(this.formCertificates.value);
+  // any additional logic here to handle the form submission
+}
+//skills ended
+
+
 }
