@@ -15,11 +15,10 @@ export class CvServiceService {
   }
 
   data = {
-    person :'',
-    skills:'',
-    experiences:'',
-    educations:'',
-    certificates:''
-
+    person :[],
+    skills:[],
+    experiences:[],
+    educations:[],
+    certificates:[]
   }
 }

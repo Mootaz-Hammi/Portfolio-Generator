@@ -1,12 +1,12 @@
 .picture{
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    margin-top: 2rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20%;
+    margin-bottom: 2rem;
     justify-content: center;
     align-items: center;
     display: flex;
-    background-image: linear-gradient(red,black);
+    
 }
 .left{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -22,7 +22,7 @@
     
 }
 .left-title{
-    margin-left: 1rem;
+    
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -39,8 +39,43 @@
     
 }
 .right-title{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    gap: 2rem;
+    text-transform: uppercase;
     display: flex;
+
+}
+.contact>span{
+    display: flex;
+    flex-direction: column;
+}
+.experience-details{
+    display: flex;
+    
+    flex-direction: column;
+    font-weight: normal;
+    font-size: 1rem;
+   
+}
+.experience-details>span:nth-child(1){
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.experience-details>span:nth-child(2){
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.educations-details{
+    display: flex;
+    flex-direction: column;  
+}
+.certificates-datails{
+    display: flex;
+    flex-direction: column;
+   
+}
+.skills-details{
+    display: flex;
+    flex-direction: column;
 }

@@ -1,17 +1,15 @@
+<div id="myElement">
 <div class="container">
   <div class="row">
     
         
-        <div class="col-4 left">
+        <div class="col-4">
+  
+                <img class="picture col-2" [src]="imageUrl" alt="">
 
-            <div class="picture">
-                <img [src]="imageUrl" alt="">
-                <h2>image</h2>
-                
-            </div><!--picturre-->
             <div class="description">
               <div class="left-title">about me</div>
-              <h2>{{arr.Description}}</h2>      
+              <span class="container">{{person.Description}}</span>      
           </div><!--description-->
 
           <div class="languages">
@@ -25,36 +23,100 @@
 
             
            
-    <!--LET SIDE ENDED-->
+    <!--LEFT SIDE ENDED-->
     
-    <div class="right col-6">
+    <div class="right col-8">
       <div class="header row border">
-      <div class="main col-6">
+      <div class="main col-7">
       <div class="name">
-        <h1>Hi, I'M <span class="Name">{{arr.Name}}</span> </h1>
+        <h1> <span class="Name">{{person.Name}}</span> </h1>
     </div><!--name-->
     <div class="Title">
-      <h1> Title</h1>{{arr.Title}}
+      <h2>{{person.Title}}</h2>
     </div><!--title-->
-  </div><!--col-6 main-->
-    <div class="contact col-6">
-        
-      <span style="font-weight: bold;">Contact</span> {{arr.Contact}}
+  </div><!--col-8 main-->
 
+  
+    <div class="contact col-5">
+        
+      <span style="font-weight: bold;">Adress</span> {{person.Adress}}
+      <span style="font-weight: bold;">Phone</span> {{person.Phone}}
+      <span style="font-weight: bold;">Email</span> {{person.Email}}
+      <span style="font-weight: bold;">LinkedIn</span> {{person.LinkedIn}}
+      <span style="font-weight: bold;">GitHub</span> {{person.GitHub}}
    </div><!--contact-->
   </div><!--header row-->
-   <div class="row">
-    <div class="experience">
-      <div class="right-title">Experiences</div> {{arr.Experiences}}
+
+
+  <div class="row">
+    <div class="col-6 border mt-10">
+  <div class="experience">
+        <div class="right-title">
+          Experiences
+        </div>
+      </div>
+      <!--experience title ended-->
+      <div class="experiencedetails" *ngFor="let experiences of experiences">
+      <div class="experience-details">
+      
+      <span >{{experiences.experience}} experience</span>
+      <span>{{experiences.experiencePlace}} experience place</span>
+      <span>{{experiences.dateexperience}} experience Date</span>
+      <!-- {{experiences.experiencePlace}}
+      {{experiences.dateexperience}} -->
+      </div>
+    
     </div><!--experience-->
+    <!--education begin-->
+
+
     <div class="education">
-      <div class="right-title">Education</div> {{arr.Education}}
+
+      <div class="right-title">Education</div>
+    
+    <div class="educationloop" *ngFor="let education of educations">
+      <div class="educations-details">
+     <span> {{education.educationType}} educations Type </span>
+     <span> {{education.educationPlace}} educations Place</span>
+     <span> {{education.dateE}} educations Date </span>
+    </div><!--education details-->
+    </div><!--loop-->
+  </div>
   </div><!--education-->
+  
+
+  
+    <div class="p-2 col-6 border">
+
   <div class="certificates">
-    <div class="right-title">Certificates</div>  {{arr.Certificates}}
-  </div><!--certificates-->
- </div><!--row-->
+    <div class="right-title">Certificates</div>
+      <div class="certificatesloop" *ngFor="let certificate of certificates">
+      <div class="certificates-datails">
+      <span>  {{certificate.title}} certificate Title</span>
+      <span>  {{certificate.dateC}} certificate date</span>
+      </div><!--details-->
+    </div><!--loop-->
+    </div><!--certificates-->
+  
+
+  <div class="skills">
+    <div class="right-title">Skills</div>
+    <div class="skillsloop" *ngFor="let skill of skills">
+  <div class="skills-details">
+   <span> {{skill.skills}} Skills </span>
+   <span> {{skill.level}} Skills level </span>
+  </div><!--skills details-->
+  </div><!--loop-->
+  </div><!--skills-->
+
+
+</div><!--col-6-->
+
+</div><!--row-->
+
+
     </div><!--right-->
+    <button class="btn btn-success"(click)="downloadAsPDF()">Download as PDF</button>
     
     
 
@@ -77,3 +139,4 @@
     </div><!--interest-->
   </div><!--row-->
 </div><!--conainer-->
+</div>

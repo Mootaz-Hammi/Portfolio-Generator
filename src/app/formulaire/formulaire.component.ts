@@ -188,6 +188,7 @@ this.formSkills = this.fb.group({
     this.service.data.skills = this.formSkills.value.skillsArray
     this.service.data.certificates=this.formCertificates.value.certificatesArray
     this.service.data.educations=this.formEducations.value.educationsArray
+    this.service.data.experiences=this.formexperience.value.experienceArray
     this.service.data.person=this.cvForm.value
   
   }
@@ -223,13 +224,6 @@ this.formSkills = this.fb.group({
     }
     this.service.ImageUrl = this.imageUrl
     console.log(this.imageUrl);
-    
-    // const filePath : string = file.path;
-    // this.service.ImageUrl = filePath;
-    // this.imageUrl=filePath
-    // console.log(filePath)
-    // formData.append('image', file, file.name);
-    // this.uploadImage(formData)
   }
 
 //skills begin
