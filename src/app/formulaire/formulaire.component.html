@@ -2,7 +2,7 @@
 <div class="formulaire">
     <div class="container mw-100">
         <div class="row">
-<form [formGroup]="cvForm" class="formulaire" (ngSubmit)="save()">
+<form [formGroup]="cvForm" class="formulaire" (ngSubmit)="sendData()">
   <img class="picture" [src]="imageUrl" alt="">
   <div class="col-3" >
     <input  class="form-control" formControlName="Picture" type="file" (change)="onFileSelected($event)">
@@ -53,105 +53,15 @@
   </div><!--Contact-->
 </div><!--container contact-->
     
-      <div class="container mw-100">
-        <div class="row">
-          <div class="Education col-6 border">
-    <h3 for="Education">Education:</h3>
-    <div class="container mw-100 ">
-    <div formArrayName="Education">
-      
-        <ng-container *ngFor="let Education of cvForm.get('Education')['controls'];index as i">
-          <input class="form-control" type="text" formControlName="{{i}}">
-          <!-- <input [formControlName]="i"> -->
-        </ng-container>
-        <button class="btn btn-success">+</button>
-        </div>
-    </div>
-    </div>
-  
-  <!-- <div class="col-6 card">
-    <h3 for="Skills">Skills:</h3>
-      <div formArrayName="Skills">
-        
-          <ng-container *ngFor="let skill of cvForm.get('Skills')['controls'];index as i">
-            <input class="form-control" type="text" formControlName="{{i}}">
-             <input [formControlName]="i"> 
-          </ng-container>
-          <button class="btn btn-success">+</button>
-          
-      </div>Skills
-    </div>education
-   </div> col-6 
-    </div>row-->
-  
-
-    <div class="container mw-100">
-      <div class="row">
-        <div class="col-6 border">
-      <h3 for="Experiences">Experiences:</h3>
-      <div formArrayName="Experiences">
-        
-          <ng-container *ngFor="let Experiences of cvForm.get('Experiences')['controls'];index as i">
-            <input class="form-control" type="text" formControlName="{{i}}">
-            <!-- <input [formControlName]="i"> -->
-          </ng-container>
-          <button class="btn btn-success">+</button>
-        </div><!--Experiences-->
-      </div><!--col-6-->
-      <div class="col-6 border">
-    <h3 for="Certificates">Certificates:</h3>
-    <div formArrayName="Certificates">
-      
-        <ng-container *ngFor="let Certificates of cvForm.get('Certificates')['controls'];let i=index">
-          <input class="form-control" type="text" formControlName="{{i}}">
-          <!-- <input [formControlName]="i"> -->
-        </ng-container>
-        <button class="btn btn-success">+</button>
-        
-    </div><!--Certificates-->
-  <!-- </div> -->
-  </div><!--row-->
-  </div><!--container-->
-    
-    <h3 for="Languages">Languages:</h3>
-    <div class="container mw-100"  formArrayName="Languages">
-      
-        <div *ngFor="let Language of cvForm.get('Languages')['controls'];let i=index" [formGroupName]="i">
-          <!-- <div formGroupName="i"> -->
-            <label><span> Languages :</span> <input class="form-control" type="text" formControlName="languageName">
-            </label>
-            <label> <span> Level :</span> <input class="form-control" type="text" formControlName="languageLevel">
-
-            </label>
-          <!-- <input [formControlName]="i"> -->
-          <!-- </div> -->
-        
-      </div><!--formgroup-->
-      <button class="btn btn-success"(click)="addLanguage()">+</button>
-    </div><!--Languages-->
-
-    <h3 for="Interest">Interest:</h3>
-    <div formArrayName="Interest">
-      
-        <ng-container *ngFor="let Interest of cvForm.get('Interest')['controls'];index as i">
-          <input class="form-control" type="text" formControlName="{{i}}">
-          <!-- <input [formControlName]="i"> -->
-        </ng-container>
-        <button class="btn btn-success">+</button>
-        
-    </div><!--Interest-->
-    
-    
-    <!-- Add more form controls for the other fields -->
     
     <div>
       <button class="btn btn-success" type="submit" [disabled]="cvForm.invalid">Save</button>
     </div>
-    </div></div></div>
+    
   </form>
 </div><!--row-->
 </div><!--container-->
-
+</div><!--formualaire-->
 
 <div class="container mw-100">
   <div class="row">
@@ -192,23 +102,23 @@
   <div class="card col-6">
     <div class="card-body">
     <h5 class="card-title"><h1 class="text-center">Professional certificates </h1></h5>
-      <form class="form-group" [formGroup]="formCertificates" >
+      <form class="form-group" [formGroup]="formCertificates" (ngSubmit)="onSubmit3()">
         <div formArrayName="certificatesArray">
           
           <div class="col-6" *ngFor="let item of certificatesArray.controls; let i = index" [formGroupName]="i">
-            <label class="form-label" for="certificates{{i}}">certificates {{ i + 1 }}</label>
-            <input [className]="item.get('certificates').invalid && (item.get('certificates').dirty || item.get('certificates').touched) ? 'form-control is-invalid':'form-control'" type="text" id="certificates{{i}}" formControlName="certificates">
-            <div *ngIf="item.get('certificates').invalid && (item.get('certificates').dirty || item.get('certificates').touched)" class="invalid-feedback">
-              <div *ngIf="item.get('certificates').errors['required']">certificates is required</div>
+            <label class="form-label" for="title{{i}}">Certification {{ i + 1 }}</label>
+            <input [className]="item.get('title').invalid && (item.get('title').dirty || item.get('title').touched) ? 'form-control is-invalid':'form-control'" type="text" id="title{{i}}" formControlName="title">
+            <div  class="invalid-feedback">
+              <div >Certification is required</div>
             </div>
             <br>
-            <label class="form-label" for="dateC{{i}}">Level {{ i + 1 }}</label>
-            <input [className]="item.get('dateC').invalid && (item.get('dateC').dirty || item.get('dateC').touched) ? 'form-control is-invalid':'form-control'" type="text" id="level{{i}}" formControlName="dateC">
+            <label class="form-label" for="dateC{{i}}">Date{{ i + 1 }}</label>
+            <input [className]="item.get('dateC').invalid && (item.get('dateC').dirty || item.get('dateC').touched) ? 'form-control is-invalid':'form-control'" type="text" id="dateC{{i}}" formControlName="dateC">
             <div *ngIf="item.get('dateC').invalid && (item.get('dateC').dirty || item.get('dateC').touched)" class="invalid-feedback">
-              <div *ngIf="item.get('dateC').errors['required']">Level is required</div>
+              <div *ngIf="item.get('dateC').errors['required']">Date is required</div>
             </div>
             <br>
-            <button class="btn btn-danger" type="button" >Remove Skill</button>
+            <button class="btn btn-danger" type="button" (click)="removecertificates(i)" >Remove Certificate</button>
             <hr>
           </div>
         </div>
@@ -219,8 +129,82 @@
     </div><!--card body-->
    </div><!-- certificates ended card col-6 -->
 
+     <!--educations & experiences begin-->
+ <!--skills begin-->
+  <div class="card col-6">
+    <div class="card-body">
+    <h5 class="card-title"><h1 class="text-center">Educations </h1></h5>
+      <form class="form-group" [formGroup]="formEducations" (ngSubmit)="onSubmit4()">
+        <div formArrayName="educationsArray">
+          
+          <div class="col-6" *ngFor="let item of educationsArray.controls; let i = index" [formGroupName]="i">
+            <label class="form-label" for="educationType{{i}}">Education Title : {{ i + 1 }}</label>
+            <input [className]="item.get('educationType').invalid && (item.get('educationType').dirty || item.get('educationType').touched) ? 'form-control is-invalid':'form-control'" type="text" id="educationType{{i}}" formControlName="educationType">
+            <div *ngIf="item.get('educationType').invalid && (item.get('educationType').dirty || item.get('educationType').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('educationType').errors['required']">educations is required</div>
+            </div>
+            <br>
+            <label class="form-label" for="educationPlace{{i}}">Education Type : {{ i + 1 }}</label>
+            <input [className]="item.get('educationPlace').invalid && (item.get('educationPlace').dirty || item.get('educationPlace').touched) ? 'form-control is-invalid':'form-control'" type="text" id="level{{i}}" formControlName="educationPlace">
+            <div *ngIf="item.get('educationPlace').invalid && (item.get('educationPlace').dirty || item.get('educationPlace').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('educationPlace').errors['required']">educationPlace is required</div>
+            </div>
+            <label class="form-label" for="dateE{{i}}">Education Place : {{ i + 1 }}</label>
+            <input [className]="item.get('dateE').invalid && (item.get('dateE').dirty || item.get('dateE').touched) ? 'form-control is-invalid':'form-control'" type="text" id="level{{i}}" formControlName="dateE">
+            <div *ngIf="item.get('dateE').invalid && (item.get('dateE').dirty || item.get('dateE').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('dateE').errors['required']">Eduaction Date is required</div>
+            </div>
+            <br>
+            <button class="btn btn-danger" type="button" (click)="removeeducations(i)">Remove Education</button>
+            <hr>
+          </div>
+        </div>
+        <button class="btn btn-success mt-4" type="button" (click)="addeducations()">Add Education</button>
+        
+      </form><!--education Skills-->
+    </div><!--card body-->
+  </div><!-- Educations ended card col-6-->
+  
+
+  <!-- experiences begin -->
+  <div class="card col-6">
+    <div class="card-body">
+    <h5 class="card-title"><h1 class="text-center">Professional Experiences </h1></h5>
+      <form class="form-group" [formGroup]="formexperience" (ngSubmit)="onSubmit3()">
+        <div formArrayName="experienceArray">
+          
+          <div class="col-6" *ngFor="let item of experienceArray.controls; let i = index" [formGroupName]="i">
+            <label class="form-label" for="experience{{i}}">Experiences en : {{ i + 1 }}</label>
+            <input [className]="item.get('experience').invalid && (item.get('experience').dirty || item.get('experience').touched) ? 'form-control is-invalid':'form-control'" type="text" id="experience{{i}}" formControlName="experience">
+            <div  class="invalid-feedback">
+              <div >Experience is required</div>
+            </div>
+            <br>
+            <label class="form-label" for="experiencePlace{{i}}">Experience Place : {{ i + 1 }}</label>
+            <input [className]="item.get('experiencePlace').invalid && (item.get('experiencePlace').dirty || item.get('experiencePlace').touched) ? 'form-control is-invalid':'form-control'" type="text" id="experiencePlace{{i}}" formControlName="experiencePlace">
+            <div *ngIf="item.get('experiencePlace').invalid && (item.get('experiencePlace').dirty || item.get('experiencePlace').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('experiencePlace').errors['required']">Date is required</div>
+            </div>
+            <br>
+            <label class="form-label" for="dateexperience{{i}}">Experience Date : {{ i + 1 }}</label>
+            <input [className]="item.get('experiencePlace').invalid && (item.get('dateexperience').dirty || item.get('dateexperience').touched) ? 'form-control is-invalid':'form-control'" type="text" id="dateexperience{{i}}" formControlName="dateexperience">
+            <div *ngIf="item.get('dateexperience').invalid && (item.get('dateexperience').dirty || item.get('dateexperience').touched)" class="invalid-feedback">
+              <div *ngIf="item.get('dateexperience').errors['required']">Date is required</div>
+            </div>
+            <button class="btn btn-danger" type="button" (click)="removeexperience(i)" >Remove Experience</button>
+            <hr>
+          </div>
+        </div>
+        <button class="btn btn-success mt-4" type="button" (click)="addexperience()">Add Experience</button>
+        
+      </form><!--form experience-->
+
+    </div><!--card body-->
+   </div><!-- experernce ended card col-6 -->
+   
+
  </div><!--big row-->
 </div><!--big container-->
-</div><!--formualaire-->
+
 
 

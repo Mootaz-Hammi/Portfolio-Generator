@@ -18,8 +18,8 @@ export class ModelsComponent implements OnInit {
   ngOnInit(): void {
     
      this.imageUrl   = this.form.ImageUrl
-    this.arr=this.form.formulaire
-    console.log(this.imageUrl);
+    this.arr=this.form.data
+    console.log(this.arr);
   }
 
 }

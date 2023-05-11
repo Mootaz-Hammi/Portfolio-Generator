@@ -10,5 +10,16 @@ export class CvServiceService {
 
   formulaire:FormGroup
 
-  constructor() { }
+  constructor() { 
+
+  }
+
+  data = {
+    person :'',
+    skills:'',
+    experiences:'',
+    educations:'',
+    certificates:''
+
+  }
 }

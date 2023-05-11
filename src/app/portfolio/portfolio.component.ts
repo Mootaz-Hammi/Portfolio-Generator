@@ -12,8 +12,10 @@ export class PortfolioComponent implements OnInit {
   url:string
   arr:any;
 ngOnInit(): void {
- this.arr=this.form.formulaire 
+ this.arr=this.form.data.person
  this.url = this.form.ImageUrl
+ console.log(this.form.data);
+ 
 
  
 }
