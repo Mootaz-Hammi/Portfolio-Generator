@@ -190,7 +190,6 @@ this.formSkills = this.fb.group({
     this.service.data.educations=this.formEducations.value.educationsArray
     this.service.data.experiences=this.formexperience.value.experienceArray
     this.service.data.person=this.cvForm.value
-  
   }
 //   addSkills(){
 // (<FormArray>this.cvForm.get('Skills')).push(new FormControl(null,Validators.required))
