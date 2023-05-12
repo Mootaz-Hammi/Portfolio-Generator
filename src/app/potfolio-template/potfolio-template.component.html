@@ -1,0 +1,228 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<div class="resume-wrapper">
+	<section class="profile section-padding">
+		<div class="container">
+			<div class="picture-resume-wrapper">
+        <div class="picture-resume">
+        <span><img [src]="imageUrl"alt="" /></span>
+        <svg version="1.1" viewBox="0 0 350 350">
+  
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" result="cm" />
+    </filter>
+  </defs>
+  
+  
+<g filter="url(#goo)" >  
+  
+  <circle id="main_circle" class="st0" cx="171.5" cy="175.6" r="130"/>
+  
+  <circle id="circle" class="bubble0 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble1 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble2 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble3 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble4 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble5 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble6 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble7 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble8 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble9 st1" cx="171.5" cy="175.6" r="122.7"/>
+  <circle id="circle" class="bubble10 st1" cx="171.5" cy="175.6" r="122.7"/>
+
+</g>  
+</svg>
+      </div>
+         <div class="clearfix"></div>
+ </div>
+      <div class="name-wrapper">
+        <h1>{{person.Name}}</h1><!-- YOUR NAME AND LAST NAME  -->
+      </div>
+      <div class="clearfix"></div>
+      <div class="contact-info clearfix">
+      	<ul class="list-titles">
+      		<li>Phone</li>
+      		<li>Mail</li>
+      		<li>Adress</li>
+      	</ul>
+        <ul class="list-content ">
+        	<li>{{person.Phone}}</li> <!-- YOUR PHONE NUMBER  -->
+        	<li>{{person.Email}}</li> <!-- YOUR EMAIL -->
+        	<li>{{person.Adress}}</li> <!-- YOUR STATE AND COUNTRY  -->
+        </ul>
+      </div>
+      <div class="contact-presentation"> <!-- YOUR PRESENTATION RESUME  -->
+      	<p><span class="bold">Description :</span>
+             {{person.Description}} </p>
+      </div>
+      <div class="contact-social clearfix">
+      	<ul class="list-titles">
+      		<li>GitHub</li>
+      		<li>LinkedIn</li>
+      		<li>Email</li>
+      	</ul>
+        <ul class="list-content"> <!-- REMEMBER TO PUT THE URL ON THE HREF TAG  -->
+      		<li>{{person.GitHub}}</li> <!-- YOUR TWITTER USER  -->
+      		<li>{{person.LinkedIn}} </li> <!-- YOUR DRIBBBLE USER  -->
+      		<li>{{person.Email}} </li> <!-- YOUR BEHANCE USER  -->
+      	</ul>
+      </div>
+		</div>
+	</section>
+  
+  <section class="experience section-padding">
+  	<div class="container">
+  		<h3 class="experience-title">Experience</h3>
+      
+          <div class="education" *ngFor="let experience of experiences">
+      <div class="experience-wrapper">
+      	<div class="company-wrapper clearfix">
+      		<div class="experience-title">{{experience.experiencePlace}}
+
+            </div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
+          <div class="time">{{experiences.dateexperience}}
+
+          </div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+        </div>
+        </div>
+        
+        <div class="job-wrapper clearfix">
+        	<div class="experience-title">{{experience.experience}} </div> <!-- JOB TITLE  -->
+          <div class="company-description">
+          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  <!-- JOB DESCRIPTION  -->
+          </div>
+        </div>
+        </div>
+
+        <h3 class="experience-title">Education</h3>
+      
+          <div class="education" *ngFor="let education of educations">
+      <div class="experience-wrapper">
+      	<div class="company-wrapper clearfix">
+      		<div class="experience-title">{{education.educationPlace}}
+                
+            </div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
+          <div class="time">{{education.dateE}}
+
+          </div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+        </div>
+        </div>
+        <div class="job-wrapper clearfix">
+        	<div class="experience-title" style="bottom: 2rem;">{{education.educationType}} </div> <!-- JOB TITLE  -->
+          <div class="company-description">
+          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  <!-- JOB DESCRIPTION  -->
+          </div>
+        </div>
+        </div>
+
+        <h3 class="experience-title">Certificates</h3>
+      
+          <div class="education" *ngFor="let certificate of certificates">
+      <div class="experience-wrapper">
+      	<div class="company-wrapper clearfix">
+      		<div class="experience-title">{{certificate.title}}
+                
+            </div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
+          <div class="time">{{certificate.dateC}}
+
+          </div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
+        </div>
+        </div>
+        <div class="job-wrapper clearfix">
+        	<div class="experience-title" style="bottom: 2rem;">{{certificate.title}}</div> <!-- JOB TITLE  -->
+          <div class="company-description">
+          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  <!-- JOB DESCRIPTION  -->
+          </div>
+        </div>
+        </div>
+
+      
+
+
+        
+        
+        <!-- <div class="company-wrapper clearfix">
+      		<div class="experience-title">Company name</div> 
+          <div class="time">Nov 2010 - Present</div>
+      	</div>
+        
+         <div class="job-wrapper clearfix">
+        	<div class="experience-title">Freelance, Web Designer / Web Developer</div> 
+          <div class="company-description">
+          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  
+          </div>
+        </div> -->
+        
+        <!-- <div class="company-wrapper clearfix">
+      		<div class="experience-title">Company name</div> 
+          <div class="time">Nov 2009 - Nov 2010</div> 
+      	</div> 
+        
+         <div class="job-wrapper clearfix">
+        	<div class="experience-title">Web Designer </div> 
+          <div class="company-description">
+          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>   
+          </div>
+        </div> -->
+        
+      </div><!--Skill experience-->
+      
+      <div class="section-wrapper clearfix" >
+      	<h3 class="section-title">Languages</h3>  <!-- YOUR SET OF SKILLS  -->
+        	<ul *ngFor="let lang of languages">
+        		<li class="skill">{{lang}}</li>
+        		 
+            
+        	</ul>
+        
+      </div>
+      
+      <div class="section-wrapper clearfix">
+        <h3 class="section-title">Hobbies</h3>  <!-- DESCRIPTION OF YOUR HOBBIES -->
+        <div class="experience-title" *ngFor="let interest of interest">
+            <li class="skill">{{interest}}</li>
+        </div>
+     </div>
+      
+
+  </section>
+  
+  <div class="clearfix"></div>
+</div>
+<script>
+    // Some code thanks to @chrisgannon
+
+var select = function(s) {
+  return document.querySelector(s);
+}
+
+function randomBetween(min,max)
+{
+    var number = Math.floor(Math.random()*(max-min+1)+min);
+  
+    if ( number !== 0 ){
+      return number;
+    }else {
+      return 0.5;
+    }
+}
+
+var tl = new TimelineMax();
+
+for(var i = 0; i < 20; i++){
+
+  var t = TweenMax.to(select('.bubble' + i), randomBetween(1, 1.5), {
+    x: randomBetween(12, 15) * (randomBetween(-1, 1)),
+    y: randomBetween(12, 15) * (randomBetween(-1, 1)), 
+    repeat:-1,
+    repeatDelay:randomBetween(0.2, 0.5),
+    yoyo:true,
+    ease:Elastic.easeOut.config(1, 0.5)
+  })
+
+  tl.add(t, (i+1)/0.6)
+}
+
+tl.seek(50);
+</script>

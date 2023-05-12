@@ -6,7 +6,7 @@
     margin-top: 2rem;
     gap: 1rem;
 }
-.picture{
+/* .picture{
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
@@ -15,7 +15,7 @@
     align-items: center;
     display: flex;
     background-image: linear-gradient(red,black);
-}
+} */
 .Name{
     text-transform: uppercase;
 }
@@ -24,8 +24,4 @@
     text-transform: uppercase;
     font-weight: bold;
 }
-.contact{
-    height: 10rem;
-    width: auto;
-    background-color: red;
-}
+

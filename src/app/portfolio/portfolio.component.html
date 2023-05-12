@@ -1,64 +1,129 @@
-<div class="container mw-100">
-    <div class="header">
-        <span class="portfolio">
-       <h1> PORTFOLIO </h1>
-        </span><!--portfolio-->
-        
-
-            <div  class="picture">
-                <img class="picture" [src]="url" alt="">
-            </div><!--picturre-->
-            <div class="name">
-                <h1>Hi, I'M <span class="Name">{{arr.Name}}</span> </h1>
-            </div><!--name-->
-            <div class="Title">
-              <h1> Title</h1>{{arr.Title}}
-            </div><!--title-->
-            <div class="description">
-                <h2>{{arr.Description}}</h2>  
-                <h2>{{arr | json}}</h2>    
+<div id="myElement">
+  <div class="container">
+    <div class="">
+      
+          
+          <div class="col-4">
+    
+                  <img class="picture col-2" [src]="imageUrl" alt="">
+  
+              <div class="description">
+                <div class="left-title">about me</div>
+                <span class="container">{{person.Description}}</span>      
             </div><!--description-->
-    </div>
+  
+            <div class="left-title">languages</div>
+            <div class="languages" *ngFor="let lang of languages">
+              <div class="mini">
+              <span><li>{{lang}}</li></span>
+            </div>
+           </div><!--languages-->
+  
+           <div class="left-title">Interest</div>
+           <div class="skills" *ngFor="let interest of interest">
+             <span class="mini"> <li>{{interest}}</li> </span>
+          </div><!--skills-->
+        </div>
+  
+              
+             
+      <!--LEFT SIDE ENDED-->
+      
+      <div class="right col-8">
+        <div class="header  border">
+        <div class="main col-7">
+        <div class="name">
+           <span class="Name">{{person.Name}}</span>
+      </div><!--name-->
+      <div class="Title">
+        <h2>{{person.Title}}</h2>
+      </div><!--title-->
+    </div><!--col-8 main-->
+  
     
-    
-    
-
-    <!-- <div class="about_me">
-
-    </div>about me -->
-
-    <div class="contact">
+      <div class="contact col-5">
+          
+        <span style="font-weight: bold;">Adress : {{person.Adress}}</span>
+        <span style="font-weight: bold;">Phone : {{person.Phone}}</span>
+        <span style="font-weight: bold;">Email : {{person.Email}}</span> 
+        <span style="font-weight: bold;">LinkedIn : {{person.LinkedIn}}</span>
+        <span style="font-weight: bold;">GitHub : {{person.GitHub}}</span>
+     </div><!--contact-->
+    </div><!--header -->
+  
+  
+    <div class="">
+      <div class=" border mt-10">
+    <div class="experience bigtext">
+          <div class="title texte-ligne-dessous">
+            Experiences
+          </div>
+        </div>
+        <!--experience title ended-->
+        <div class="experiencedetails" *ngFor="let experiences of experiences">
+        <div class="experience-details">
         
-       <span style="font-weight: bold;">Phone</span> {{arr.Phone}}
-       <span style="font-weight: bold;">LinkedIn</span> {{arr.LinkedIn}}
-       <span style="font-weight: bold;">Github</span> {{arr.Github}}
-       <span style="font-weight: bold;">Adress</span> {{arr.Adress}}
-       <span style="font-weight: bold;">Email</span> {{arr.Mail}}
-
-    </div><!--contact-->
-
-    <div class="education">
-       <span>Educations</span> {{arr.Education}}
+        <span class="title2"><li> {{experiences.experience}}</li></span>
+        <span class="title3">{{experiences.experiencePlace}}</span>
+        <span class="titledate">{{experiences.dateexperience}}</span>
+        <!-- {{experiences.experiencePlace}}
+        {{experiences.dateexperience}} -->
+        </div>
+      
+      </div><!--experience-->
+      <!--education begin-->
+  
+  
+      <div class="education bigtext">
+  
+        <div class="title texte-ligne-dessous">Education</div>
+      
+      <div class="educationloop" *ngFor="let education of educations">
+        <div class="educations-details">
+       <span class="title2"><li> {{education.educationType}}</li> </span>
+       <span class="title3"> {{education.educationPlace}}</span>
+       <span class="titledate"> {{education.dateE}}</span>
+      </div><!--education details-->
+      </div><!--loop-->
+    </div>
     </div><!--education-->
-
-    <div class="skills">
-      <span>skills</span>  {{arr.Skills}}
-    </div><!--skills-->
     
-
-    <div class="experience">
-      <span>experience</span> {{arr.Experiences}}
-    </div><!--experience-->
-
-    <div class="certificates">
-      <span>certificates</span>  {{arr.Certificates}}
-    </div><!--certificates-->
-
-    <div class="languages">
-       <span>languages</span> {{arr.Languages}}
-    </div><!--languages-->
-
-    <div class="interest">
-       <span>interest</span> {{arr.Interest}}
-    </div><!--interest-->
-</div><!--conainer-->
+  
+    
+      <div class=" border">
+  
+    <div class="certificates bigtext">
+      <div class="title texte-ligne-dessous">Certificates</div>
+        <div class="certificatesloop" *ngFor="let certificate of certificates">
+        <div class="certificates-datails">
+        <span class="title2"><li> {{certificate.title}}</li></span>
+        <span class="titledate">{{certificate.dateC}}</span>
+        </div><!--details-->
+      </div><!--loop-->
+      </div><!--certificates-->
+    
+  
+    <div class="skills bigtext">
+      <div class="title texte-ligne-dessous">Skills</div>
+      <div class="skillsloop" *ngFor="let skill of skills">
+    <div class="skillsdetails">
+     <span class="title2"> <li> {{skill.skills}}</li> </span>
+     <span> {{skill.level}}</span>
+    </div><!--skills details-->
+    </div><!--loop-->
+    </div><!--skills-->
+  
+  
+  </div><!---->
+  
+  </div><!---->
+   
+  
+      <div class="interest">
+         <span>interest</span> {{arr.Interest}}
+         {{arr | json}}
+      </div><!--interest-->
+    </div><!---->
+  </div><!--conainer-->
+  </div>
+  

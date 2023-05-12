@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CvServiceService } from '../service/cv-service.service';
-import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.css']
+  selector: 'app-potfolio-template',
+  templateUrl: './potfolio-template.component.html',
+  styleUrls: ['./potfolio-template.component.css']
 })
-export class PortfolioComponent implements OnInit {
+export class PotfolioTemplateComponent {
   arr:any;
   imageUrl:any
 
@@ -40,6 +39,4 @@ afficher(){
   console.log(this.form.formulaire);
   
 }
-
-
 }

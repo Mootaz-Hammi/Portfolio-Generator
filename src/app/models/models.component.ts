@@ -18,9 +18,11 @@ export class ModelsComponent implements OnInit {
   educations:any
   certificates:any
   skills:any
+  languages:string[] = ["frensh","english","arabic"]
+  interest:string[] = ["music","football","reading"]
   
   constructor(private form:CvServiceService){
-   
+    
   }
   ngOnInit(): void {
     
@@ -45,7 +47,7 @@ export class ModelsComponent implements OnInit {
       filename: 'my-document.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      jsPDF: { unit: 'mm', format: 'a3', orientation: 'portrait' }
     };
 
     html2pdf()

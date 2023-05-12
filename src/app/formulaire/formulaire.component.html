@@ -55,7 +55,7 @@
     
     
     <div>
-      <button class="btn btn-success" type="submit" [disabled]="cvForm.invalid">Save</button>
+      <button class="btn btn-success" type="submit">Save</button>
     </div>
     
   </form>
@@ -144,12 +144,12 @@
               <div *ngIf="item.get('educationType').errors['required']">educations is required</div>
             </div>
             <br>
-            <label class="form-label" for="educationPlace{{i}}">Education Type : {{ i + 1 }}</label>
+            <label class="form-label" for="educationPlace{{i}}">Education Place : {{ i + 1 }}</label>
             <input [className]="item.get('educationPlace').invalid && (item.get('educationPlace').dirty || item.get('educationPlace').touched) ? 'form-control is-invalid':'form-control'" type="text" id="level{{i}}" formControlName="educationPlace">
             <div *ngIf="item.get('educationPlace').invalid && (item.get('educationPlace').dirty || item.get('educationPlace').touched)" class="invalid-feedback">
               <div *ngIf="item.get('educationPlace').errors['required']">educationPlace is required</div>
             </div>
-            <label class="form-label" for="dateE{{i}}">Education Place : {{ i + 1 }}</label>
+            <label class="form-label" for="dateE{{i}}">Education Date : {{ i + 1 }}</label>
             <input [className]="item.get('dateE').invalid && (item.get('dateE').dirty || item.get('dateE').touched) ? 'form-control is-invalid':'form-control'" type="text" id="level{{i}}" formControlName="dateE">
             <div *ngIf="item.get('dateE').invalid && (item.get('dateE').dirty || item.get('dateE').touched)" class="invalid-feedback">
               <div *ngIf="item.get('dateE').errors['required']">Eduaction Date is required</div>
@@ -197,10 +197,13 @@
         </div>
         <button class="btn btn-success mt-4" type="button" (click)="addexperience()">Add Experience</button>
         
+        <div>
+    <button class="btn btn-success" type="submit" [disabled]="cvForm.invalid || formSkills.invalid">Save</button>
+  </div>
       </form><!--form experience-->
 
     </div><!--card body-->
-   </div><!-- experernce ended card col-6 -->
+   </div><!-- experience ended card col-6 -->
    
 
  </div><!--big row-->

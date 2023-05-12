@@ -9,6 +9,7 @@ import { ModelsComponent } from './models/models.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { Routing } from './app-routing.module';
+import { PotfolioTemplateComponent } from './potfolio-template/potfolio-template.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Routing } from './app-routing.module';
     FormulaireComponent,
     ModelsComponent,
     PortfolioComponent,
-    NavbarComponent
+    NavbarComponent,
+    PotfolioTemplateComponent
   ],
   imports: [
     BrowserModule,
